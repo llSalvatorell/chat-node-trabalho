@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cadastro</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Cadastro</h2>
+
+<input id="name" placeholder="Nome">
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Senha">
+
+<button onclick="register()">Cadastrar</button>
+
+</div>
+
+<script>
+
+function register(){
+
+fetch("/auth/register",{
+method:"POST",
+headers:{ "Content-Type":"application/json" },
+body:JSON.stringify({
+name:document.getElementById("name").value,
+email:document.getElementById("email").value,
+password:document.getElementById("password").value
+})
+})
+.then(res=>res.text())
+.then(msg=>alert(msg));
+
+}
+
+</script>
+
+</body>
+</html>

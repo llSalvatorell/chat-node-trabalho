@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Login</h2>
+
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Senha">
+
+<button onclick="login()">Entrar</button>
+
+</div>
+
+<script>
+
+function login(){
+
+fetch("/auth/login",{
+method:"POST",
+headers:{ "Content-Type":"application/json" },
+body:JSON.stringify({
+email:document.getElementById("email").value,
+password:document.getElementById("password").value
+})
+})
+.then(res=>res.text())
+.then(msg=>{
+alert(msg);
+if(msg.includes("sucesso")){
+window.location="/chat.html";
+}
+});
+
+}
+
+</script>
+
+</body>
+</html>

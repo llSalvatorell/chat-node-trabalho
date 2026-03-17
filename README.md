@@ -50,7 +50,7 @@ As mensagens enviadas por um usuário aparecem instantaneamente para todos os us
 ## Como executar o projeto
 
 ### 1 - Clonar o repositório
-git clone LINK_DO_REPOSITORIO
+git clone https://github.com/llSalvatorell/chat-node-trabalho.git
 
 ### 2 - Entrar na pasta do projeto
 cd chat-node-trabalho
